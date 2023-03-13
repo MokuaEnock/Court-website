@@ -4,7 +4,7 @@ export default function Signup() {
   return (
     <main className="signup">
       <form className="auth-form">
-        <p>Sign Up</p>
+        <h4>Sign Up</h4>
         <input type="text" placeholder="Enter your username" />
         <input type="text" placeholder="Enter your email address" />
         <input type="text" placeholder="Enter your password" />
