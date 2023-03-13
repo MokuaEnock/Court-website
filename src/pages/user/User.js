@@ -61,7 +61,7 @@ export default function User() {
             className="file-upload-input"
             accept=".pdf, .docx"
           />
-          <button type="submit">Submit</button>
+          <button type="submit" id="doc-file-submit">Submit</button>
         </form>
       </section>
 
