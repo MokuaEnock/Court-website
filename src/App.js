@@ -1,14 +1,15 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landing from "./pages/landing/Laning";
 import User from "./pages/user/User";
 import Login from "./pages/authentication/Login";
 import Signup from "./pages/authentication/Signup";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <Landing />
+      <Header />
       <Routes>
         <Route path="/user" element={<User />} />
         <Route path="/auth">
@@ -16,6 +17,7 @@ function App() {
           <Route path="signup" element={<Signup />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
