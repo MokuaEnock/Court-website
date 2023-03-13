@@ -11,7 +11,14 @@ export default function Landing() {
           Sign Up
         </Link>
       </section>
-      <section className="landing-cont1">This is the second container</section>
+      
+      <section className="landing-cont1">
+        <h4>What is Insunity</h4>
+        <p>
+          Insunity is a AI powered platform that employs the power of deep
+          learning and machine learning to make the field of law a bit hectic.
+        </p>
+      </section>
     </main>
   );
 }
