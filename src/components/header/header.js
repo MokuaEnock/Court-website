@@ -3,8 +3,7 @@ import "./header.css";
 
 export default function Header() {
   return (
-    <header>
-      This is the header
+    <header id="header">
       <Link to="/">Home</Link>
       <Link to="/auth/login">Login</Link>
       <Link to="/auth/signup">Signup</Link>

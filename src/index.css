@@ -40,6 +40,6 @@ main {
 @media only screen and (max-width: 767px) {
   #root > * {
     border: none;
-    width: 95%;
+    /* width: 95%; */
   }
 }

@@ -3,5 +3,19 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: var(--primary-color);
+}
+
+header > a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 767px) {
+  #header {
+    border: none;
+    width: 100vw;
+    height: 7vh;
+  }
 }
