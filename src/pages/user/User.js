@@ -1,11 +1,17 @@
 import "./user.css";
+import { PDFDocument } from "pdf-lib";
+import { JSZip } from "jszip";
 
 export default function User() {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <main className="user">
       <section className="user-container">
         <h3>Upload your document</h3>
-        <form className="file-form">
+        <form className="file-form" onSubmit={handleSubmit}>
           <input
             type="file"
             placeholder="Upload file"
