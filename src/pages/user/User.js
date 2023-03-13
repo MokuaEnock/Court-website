@@ -61,14 +61,23 @@ export default function User() {
             className="file-upload-input"
             accept=".pdf, .docx"
           />
-          <button type="submit" id="doc-file-submit">Submit</button>
+          <button type="submit" id="doc-file-submit">
+            Submit
+          </button>
         </form>
       </section>
 
       <section className="user-container">
         <h3>Fill in your case</h3>
         <form className="file-form">
-          <textarea placeholder="Enter text" className="file-upload-input" />
+          <textarea
+            id="textarea"
+            placeholder="Enter text"
+            className="file-upload-input"
+          />
+          <button type="submit" id="doc-file-submit">
+            Submit
+          </button>
         </form>
       </section>
 
