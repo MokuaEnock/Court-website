@@ -56,3 +56,10 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Target phones and tablets */
+@media only screen and (max-width: 767px) {
+  .landing-cont1 {
+    border: none;
+  }
+}

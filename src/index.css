@@ -16,7 +16,7 @@ body {
 
 :root {
   --primary-color: #007bff;
-  --secondary-color:  #848482;
+  --secondary-color: #848482;
 }
 
 main {
@@ -34,4 +34,12 @@ main {
 #root > * {
   border: thin solid black;
   width: 80vw;
+}
+
+/* Target phones and tablets */
+@media only screen and (max-width: 767px) {
+  #root > * {
+    border: none;
+    width: 95%;
+  }
 }
