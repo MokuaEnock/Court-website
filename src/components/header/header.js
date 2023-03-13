@@ -4,10 +4,10 @@ import "./header.css";
 export default function Header() {
   return (
     <header id="header">
-      <Link to="/">Home</Link>
-      <Link to="/auth/login">Login</Link>
-      <Link to="/auth/signup">Signup</Link>
+      <Link to="/">Insunity</Link>
       <Link to="/user">User</Link>
+      <Link to="/auth/login">Login</Link>
+      {/* <Link to="/auth/signup">Signup</Link> */}
     </header>
   );
 }

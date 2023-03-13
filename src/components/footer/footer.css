@@ -5,13 +5,13 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* Target phones and tablets */
 @media only screen and (max-width: 767px) {
   #footer {
     width: 100vw;
-    background-color: var(--primary-color);
-    color: white;
   }
 }
