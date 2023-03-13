@@ -5,7 +5,8 @@ export default function Landing() {
   return (
     <main className="landing">
       <section className="landing-cont1">
-        This is the first container
+        <h4>We are bringing Artificial intelligence to the field of law</h4>
+        <p>We are ungovernable</p>
         <Link className="signup-button" to="/auth/signup">
           Sign Up
         </Link>
