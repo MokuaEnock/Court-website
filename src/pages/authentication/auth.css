@@ -15,3 +15,35 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+form p {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+input {
+  border: thin solid black;
+  width: 80%;
+  height: 4vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.submit-button {
+  width: 80%;
+  height: 4vh;
+  background-color: darkblue;
+  color: white;
+  border: thin solid darkblue;
+  border-radius: 10px;
+}

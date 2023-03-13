@@ -9,7 +9,9 @@ export default function Signup() {
         <input type="text" placeholder="Enter your email address" />
         <input type="text" placeholder="Enter your password" />
         <input type="text" placeholder="Confirm your password" />
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </main>
   );
