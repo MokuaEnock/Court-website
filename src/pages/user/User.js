@@ -5,6 +5,39 @@ import { JSZip } from "jszip";
 export default function User() {
   function handleSubmit(e) {
     e.preventDefault();
+
+    const file = e.target.elements[0].files[0]; // Get uploaded file
+
+    if (!file) {
+      return; // Return early if no file uploaded
+    }
+
+    const reader = new FileReader(); // Create new FileReader object
+
+    reader.onload = async function () {
+      const content = reader.result; // Get uploaded file content
+
+      let text;
+
+      // Extract text from file based on file type
+      if (file.type === "application/pdf") {
+        const pdfDoc = await PDFDocument.load(content);
+        const pages = pdfDoc.getPages();
+        text = pages.map((page) => page.getText()).join("\n");
+      } else if (
+        file.type ===
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      ) {
+        const zip = await JSZip.loadAsync(content);
+        const doc = await zip.file("word/document.xml").async("string");
+        text = doc.replace(/<[^>]+>/g, "");
+      }
+
+      // Do something with the extracted text
+      console.log(text);
+    };
+
+    reader.readAsArrayBuffer(file); // Read uploaded file as ArrayBuffer
   }
 
   return (
@@ -18,6 +51,7 @@ export default function User() {
             className="file-upload-input"
             accept=".pdf, .docx"
           />
+          <button type="submt">Submit</button>
         </form>
       </section>
 
