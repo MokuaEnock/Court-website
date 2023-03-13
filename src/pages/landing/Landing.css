@@ -62,4 +62,9 @@
   .landing-cont1 {
     border: none;
   }
+
+  .signup-button{
+    width: 40vw;
+  }
+  
 }
