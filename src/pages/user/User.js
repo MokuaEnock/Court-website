@@ -1,9 +1,9 @@
 import "./user.css";
-import { PDFDocument } from "pdf-lib";
+import pdfjsLib from "pdfjs-dist";
 import { JSZip } from "jszip";
 
 export default function User() {
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const file = e.target.elements[0].files[0]; // Get uploaded file
@@ -15,15 +15,26 @@ export default function User() {
     const reader = new FileReader(); // Create new FileReader object
 
     reader.onload = async function () {
-      const content = reader.result; // Get uploaded file content
+      const content = reader.result;
 
       let text;
 
-      // Extract text from file based on file type
       if (file.type === "application/pdf") {
-        const pdfDoc = await PDFDocument.load(content);
-        const pages = pdfDoc.getPages();
-        text = pages.map((page) => page.getText()).join("\n");
+        const loadingTask = pdfjsLib.getDocument({ data: content });
+        const pdf = await loadingTask.promise;
+        const numPages = pdf.numPages;
+        console.log(`Number of pages: ${numPages}`);
+
+        const pageTexts = [];
+
+        for (let i = 1; i <= numPages; i++) {
+          const page = await pdf.getPage(i);
+          const textContent = await page.getTextContent();
+          const pageText = textContent.items.map((item) => item.str).join("");
+          pageTexts.push(pageText);
+        }
+
+        text = pageTexts.join("\n");
       } else if (
         file.type ===
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -33,7 +44,6 @@ export default function User() {
         text = doc.replace(/<[^>]+>/g, "");
       }
 
-      // Do something with the extracted text
       console.log(text);
     };
 
@@ -51,7 +61,7 @@ export default function User() {
             className="file-upload-input"
             accept=".pdf, .docx"
           />
-          <button type="submt">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </section>
 
