@@ -54,6 +54,7 @@ export default function User() {
     <main className="user">
       <section className="user-container">
         <h3>Upload your document</h3>
+        
         <form className="file-form" onSubmit={handleSubmit}>
           <input
             type="file"

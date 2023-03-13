@@ -79,7 +79,7 @@ textarea:focus {
 
   .user-container {
     width: 95vw;
-    border: thin solid var(--secondary-color);
+    /* border: thin solid var(--secondary-color); */
   }
 
   #textarea {

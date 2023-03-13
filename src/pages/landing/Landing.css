@@ -7,7 +7,7 @@
 
 .landing-cont1 {
   width: 100%;
-  border: thin solid black;
+  /* border: thin solid black; */
   height: 30vh;
   display: flex;
   flex-direction: column;
@@ -66,5 +66,5 @@
   .signup-button{
     width: 40vw;
   }
-  
+
 }

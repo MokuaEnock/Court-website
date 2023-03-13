@@ -32,7 +32,7 @@ main {
 }
 
 #root > * {
-  border: thin solid black;
+  /* border: thin solid black; */
   width: 80vw;
 }
 
